@@ -15,7 +15,8 @@ def main():
     opts = args()
     build = builddata(reddit=opts['reddit'], 
         irc={ 'user': opts['irc_nick'], 'log': opts['irc_log'] },
-        markov_limit=opts['markov_limit'])
+        markov_limit=opts['markov_limit'],
+        target=opts['identity'])
     display(identity=opts['identity'], 
         lines=build.markov_build())
 

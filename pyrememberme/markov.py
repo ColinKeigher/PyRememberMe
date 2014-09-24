@@ -6,8 +6,8 @@ from pymarkovchain import MarkovChain
 
 class markovbuild(object):
     '''Builds a markov chain DB and outputs data'''
-    def __init__(self, data, lines=5):
-        self.database = '/tmp/markov.db'
+    def __init__(self, target, data, lines=5):
+        self.database = '/tmp/markov_%s.db' % target
         self.lines = lines
         self.data = '\n'.join(data)
         self.mchain = MarkovChain(self.database)

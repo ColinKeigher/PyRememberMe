@@ -9,7 +9,8 @@ from markov import markovbuild
 
 class builddata(object):
     '''Building and processing is automatic'''
-    def __init__(self, reddit=None, irc=None, markov_limit=None):
+    def __init__(self, target, reddit=None, irc=None, markov_limit=None):
+        self.target = target
         self.markov_limit = markov_limit
         self.reddit = { 'user': reddit, 'text': [] }
         self.irc = { 'user': irc['user'], 'file': irc['log'], 'text': [] }
@@ -56,7 +57,8 @@ class builddata(object):
     def markov_build(self):
         '''Returns markov chain-generated text'''
         mbuild = markovbuild(data=self.text, 
-            lines=self.markov_limit)
+            lines=self.markov_limit,
+            target=self.target)
         return mbuild.output()
 
     def process(self):
