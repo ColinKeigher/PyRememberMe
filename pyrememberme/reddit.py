@@ -33,4 +33,4 @@ class data(object):
         '''If there is data to process, add them to the text list'''
         if self.data != None:
             self.text = [ x['data']['body'].encode('utf-8', 'ignore') 
-                for x in self.data['data']['children'] ]
+                for x in self.data['data']['children'] if 'body' in x['data'].keys() ]
