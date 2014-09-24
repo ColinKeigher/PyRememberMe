@@ -40,7 +40,7 @@ class builddata(object):
             u = self.reddit['user']
             msg = 'Building data from Reddit using account "%s".' % u
             self.output(string=msg)
-            r = reddit_data(user=self.reddit)
+            r = reddit_data(user=u)
             self.reddit['text'] = r.text
             if len(self.reddit['text']) == 0:
                 msg = 'No lines to build from Reddit.'

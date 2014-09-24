@@ -54,6 +54,7 @@ def args():
     parser.add_argument('--markov-limit',
         help='Sets a limit of lines created by the markov chain (default: 5).',
         default=5,
+        type=int,
         required=False)
     return vars(parser.parse_args())
 

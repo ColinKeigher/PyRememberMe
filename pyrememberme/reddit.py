@@ -32,5 +32,5 @@ class data(object):
     def retrieve_text(self):
         '''If there is data to process, add them to the text list'''
         if self.data != None:
-            self.text = [ x['data']['body'] 
+            self.text = [ x['data']['body'].encode('utf-8', 'ignore') 
                 for x in self.data['data']['children'] ]
