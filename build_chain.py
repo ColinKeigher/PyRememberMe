@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 '''
 PyRememberMe - A Markov Bot Builder
 Created by Colin Keigher <colin@keigher.ca>
